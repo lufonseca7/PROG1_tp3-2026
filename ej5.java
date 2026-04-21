@@ -151,12 +151,10 @@ public class ej5 {
                     System.out.println("Su letra es vocal");
                     break;
                 default:
+                    System.out.println("Ingreso una letra pero no es vocal, continue ingresando letras");
                     break;  
             }
         
-            if ((letraVocal>='a'&& letraVocal<='z')||(letraVocal>='A'&&letraVocal<='Z')){
-                 System.out.println("Ingreso una letra pero no es vocal, continue ingresando letras");
-            }
         }
        
 
@@ -164,26 +162,18 @@ public class ej5 {
     }
 
     public static boolean verificarMultiplo(){
-        int numero = 2;
-        int multiplo = 4;
-        boolean esMultiplo = false;
+    int numero;
+    int multiplo = 4;
 
-        while (numero>0){
-            System.out.println("Ingrese un numero entero para verificar si es multiplo de " + multiplo);
-            numero = utils.leerInt();
+    System.out.println("Ingrese un numero entero");
+    numero = utils.leerInt();
 
-            if (numero%multiplo==0){
-                esMultiplo = true;
-            }
-            else{
-                System.out.println("El numero ingresado no es multiplo de " + multiplo);
-                esMultiplo = false;
-            }
-        }
-        System.out.println("No ingreso un numero entero y el programa finalizo");
-
-        return esMultiplo;
-        
-
+    while (numero % multiplo != 0){
+        System.out.println("No es multiplo de " + multiplo + ", intente de nuevo");
+        numero = utils.leerInt();
     }
+
+    return true;
 }
+}
+
